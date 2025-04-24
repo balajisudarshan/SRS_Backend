@@ -1,0 +1,10 @@
+const express = require('express')
+const app = express()
+const medicineRoute = require('./medicine/medicineRoute.js')
+const cors = require('cors')
+app.listen(5000,()=>{
+  console.log('server is running on port 3000')
+})
+app.use(cors())
+app.use(express.json())
+app.use('/api/v1/medicines',medicineRoute)
